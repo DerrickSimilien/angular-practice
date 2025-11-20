@@ -7,8 +7,18 @@ import { HomeComponent } from './components/home/home';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, HomeComponent],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  template: `
+    <app-header />
+
+    <main>
+        <app-home />
+    </main>
+  `,
+  styles: [`
+    main {
+      padding-inline: 16px;
+    }
+  `]
 })
 export class App {
   protected readonly title = signal('angular-practice');
