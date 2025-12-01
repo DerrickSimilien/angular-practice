@@ -8,4 +8,4 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./header.css'],
 })
 export class HeaderComponent {
-  title = signal('My first Angular app')}
+  title = 'My first Angular app'}
