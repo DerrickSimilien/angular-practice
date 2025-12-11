@@ -1,15 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { GreetingComponent } from '../greeting/greeting';  // ✅ this path is correct based on your tree
+import { GreetingComponent } from '../greeting/greeting';
+import { CounterComponent } from '../counter/counter';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [GreetingComponent],        // ✅ Angular now knows this is a standalone component
+  imports: [GreetingComponent, CounterComponent],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.css'
 })
-export class HomeComponent { 
+export class HomeComponent {
+  homeMessage = '🔥 Hello, world!';
 
-  message = signal('Welcome to the Home Component!');
-
+  keyUpHandler(event: KeyboardEvent) {
+    console.log(`user pressed the ${event.key} key`);
+  }
 }

@@ -8,5 +8,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './greeting.css',
 })
 export class GreetingComponent {
-  message = input('Hello hello!');
+  // signal-style @Input
+  message = input<string>('Hello hello!');
 }

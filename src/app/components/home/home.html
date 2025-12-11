@@ -2,4 +2,6 @@
 
 <h2>🏠 Welcome Home</h2>
 
-<app-greeting></app-greeting>
+<app-greeting [message]="homeMessage"></app-greeting>
+<app-counter />
+<input placeholder="Type something..." type="text" (keyup)="keyUpHandler($event)">
