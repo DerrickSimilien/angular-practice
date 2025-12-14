@@ -1,6 +1,15 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home';  // ✅ use the components folder
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./components/home/home').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'todos',
+    loadComponent: () =>
+      import('./todos/todos').then((m) => m.TodosComponent),
+  },
 ];
