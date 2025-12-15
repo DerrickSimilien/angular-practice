@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TodoService } from '../services/todos';
 
 @Component({
@@ -9,7 +9,11 @@ import { TodoService } from '../services/todos';
   styleUrl: './todos.css',
 })
 
-export class TodosComponent { 
+export class TodosComponent implements OnInit { 
   todoService = inject(TodoService);
+
+  ngOnInit(): void {
+    console.log(this.todoService.todoItems);
+  }
 }
 
