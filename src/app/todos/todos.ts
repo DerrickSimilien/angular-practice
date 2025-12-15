@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TodoService } from '../services/todos';
 
 @Component({
   selector: 'app-todos',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './todos.css',
 })
 
-export class TodosComponent { }
+export class TodosComponent { 
+  todoService = inject(TodoService);
+}
 
