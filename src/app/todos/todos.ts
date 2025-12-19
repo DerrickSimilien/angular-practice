@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   standalone: true,
   imports: [],
   templateUrl: './todos.html',
-  styleUrl: './todos.css',
+  styleUrl: './todos.scss',
 })
 export class TodosComponent implements OnInit {
   todoService = inject(TodoService);
