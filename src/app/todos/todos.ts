@@ -1,4 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TodoService } from '../services/todos';
 import type { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs/operators';
@@ -6,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
