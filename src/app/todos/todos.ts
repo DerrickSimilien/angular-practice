@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import { TodoService } from '../services/todos';
 import type { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs/operators';
+import { TodoItemComponent } from '../components/todo-item/todo-item';
+
+
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoItemComponent],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
+
 export class TodosComponent implements OnInit {
   todoService = inject(TodoService);
   todoItems = signal<Todo[]>([]);
