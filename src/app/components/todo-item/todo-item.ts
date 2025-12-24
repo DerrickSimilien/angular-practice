@@ -10,6 +10,19 @@ import { HighlightCompletedTodo } from '../../directives/highlight-completed-tod
   styleUrl: './todo-item.scss',
 })
 export class TodoItemComponent {
+  // Input signal (Angular 17 style)
   todo = input.required<Todo>();
+
+  // Output signal
   todoToggled = output<Todo>();
+
+  // ✅ THIS WAS MISSING
+  onToggle() {
+    const currentTodo = this.todo();
+
+    this.todoToggled.emit({
+      ...currentTodo,
+      completed: !currentTodo.completed,
+    });
+  }
 }
